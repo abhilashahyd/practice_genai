@@ -1,0 +1,40 @@
+# Building Chains  
+
+## a. Simple Sequential Chain
+**Task:**  
+Build a sequential chain that first summarizes a given text and then translates the summary into French.
+
+### Requirements:
+- Create two `PromptTemplate` instances: one for summarization and one for translation.
+- Initialize two `LLMChain` instances using these templates.
+- Combine them using `SimpleSequentialChain`.
+- Run the chain on a sample long text and print the final translated summary.
+
+## b. Conditional Chain with Branching
+**Task:**  
+Create a chain that decides whether to summarize or translate text based on user input. If the user specifies "summarize," it summarizes the text; if "translate," it translates the text to Spanish.
+
+### Requirements:
+- Define prompt templates for both summarization and translation.
+- Implement logic to choose which chain to execute based on user input.
+- Test the chain with both options and display the results.
+
+# Integrating Memory  
+
+## a. Implement Conversation Memory
+**Task:**  
+Develop a conversational chain that maintains context across multiple user inputs using `ConversationBufferMemory`.
+
+### Requirements:
+- Initialize `ConversationBufferMemory`.
+- Create a `ConversationChain` with the memory component.
+- Simulate a multi-turn conversation by running several inputs and displaying responses that consider previous interactions.
+
+## b. Persistent Memory Storage
+**Task:**  
+Modify the conversational chain to store the conversation history in a file, allowing the conversation to persist across different sessions.
+
+### Requirements:
+- Use `ConversationBufferMemory` with a file-based storage backend (e.g., JSON or text file).
+- Ensure that previous conversation history is loaded when the application starts.
+- Test by running the chain in separate executions and verifying persistence.
